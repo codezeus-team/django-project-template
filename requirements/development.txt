@@ -1,0 +1,14 @@
+-r base.txt
+
+# Utility
+bpython==0.16
+Fabric==1.13.1
+Werkzeug==0.11.15
+
+# Testing
+coverage==4.3
+mock==2.0.0
+pytest==3.0.6
+pytest-cov==2.4.0
+pytest-django==2.9
+factory_boy==2.8

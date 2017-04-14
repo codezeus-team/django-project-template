@@ -1,0 +1,18 @@
+{% load custom_tags %}
+
+<div class="col-md-4">
+  <div class="list-group">
+    <a href="{% url 'view-profile' username=user.username %}" class="list-group-item {% active 'view-profile' username=user.username %}">
+      Information
+    </a>
+    <a href="{% url 'edit-profile' %}" class="list-group-item {% active 'edit-profile' %}">
+      Edit Profile
+    </a>
+    <a href="{% url 'change-password' %}" class="list-group-item {% active 'change-password' %}">
+      Change Password
+    </a>
+    <a href="{% url 'edit-avatar' %}" class="list-group-item {% active 'edit-avatar' %}">
+      Edit Profile Picture
+    </a>
+  </div>
+</div>

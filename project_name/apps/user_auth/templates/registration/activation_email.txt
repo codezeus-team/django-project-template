@@ -1,0 +1,6 @@
+You've been registed for our new account with {{ site }} as {{ user }}. To
+activate the account follow the link below:
+
+{{ protocol}}://{{ domain }}{% url 'registration_activate' activation_key=activation_key %}
+
+This link will expire in {{ expiration_days }}

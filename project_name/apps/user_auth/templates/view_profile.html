@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load imagekit %}
+
+{% block title %}View Profile for {{ user.get_identification }}{% endblock %}
+{% block page_title %}User Profile <small>{{ user.get_identification }}</small>{% endblock %}
+
+{% block content %}
+<div class="row">
+  {% include "partials/profile_nav.html" %}
+  <div class="col-md-8">
+    {% if not user.avatar %}
+    <img src="http://placehold.it/300/CCCCCC/CCCCCC" class="img-thumbnail center-block" height="200" width="150" alt="Profile Picture" />
+    {% else %}
+    {% thumbnail '150x200' user.avatar -- class="img-thumbnail center-block" alt="Profile Picture" %}
+    {% endif %}
+
+    <hr />
+
+    <ul class="list-group">
+      {% if selected_user.first_name and selected_user.last_name %}
+      <!-- Name -->
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading"><strong>Name:</strong></h4>
+        <p class="list-group-item-text">{{ selected_user.first_name }} {{ selected_user.last_name }}</p>
+      </li>
+      {% endif %}
+
+      <!-- Username -->
+      <li class="list-group-item">
+      <h4 class="list-group-item-heading"><strong>Username:</strong></h4>
+        <p class="list-group-item-text">{{ selected_user.username }}</p>
+      </li>
+
+      <!-- Email -->
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading"><strong>Email:</strong></h4>
+        <p class="list-group-item-text">{{ selected_user.email }}</p>
+      </li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

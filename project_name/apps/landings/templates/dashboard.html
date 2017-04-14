@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block page_title %}Welcome to the Dashboard <small>{{ user.get_identification }}</small>{% endblock %}
+
+{% block content %}
+<div class="row">
+  {% lorem  %}
+  <hr />
+  <a href="{% url 'view-profile' username=user.username %}" class="btn btn-default">
+    View Profile
+  </a>
+</div>
+{% endblock %}

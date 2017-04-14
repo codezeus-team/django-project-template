@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Reset Password{% endblock %}
+{% block page_title %}Your Password Has Been Reset{% endblock %}
+
+{% block content %}
+<div class="row">
+  Congratulations, your password has been successfully reset. You may now <a href="{% url 'login' %}">login</a> to your account.
+</div>
+{% endblock %}
